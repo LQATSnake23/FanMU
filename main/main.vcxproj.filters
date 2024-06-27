@@ -54,6 +54,9 @@
     <ClCompile Include="ShellSort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Sort.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SelectionSort.h">
