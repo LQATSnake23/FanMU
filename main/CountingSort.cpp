@@ -1,7 +1,7 @@
 #include "CountingSort.h"
 #include "CountingSort.h"
 
-void CountingSort(int* arr, int n, int& count_compare)
+void CountingSort(int* arr, int n, double& count_compare)
 {
     int max = arr[0];
     for (int i = 1; ++count_compare && i < n; i++)

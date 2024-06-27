@@ -1,6 +1,6 @@
 #include "ShellSort.h"
 
-void ShellSort(int* arr, int n, int& count_compare)
+void ShellSort(int* arr, int n, double& count_compare)
 {
     int h = 1;
     while (++count_compare && h <= n / 3)

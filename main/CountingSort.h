@@ -1,3 +1,3 @@
 #pragma once
 #include <iostream>
-void CountingSort(int* arr, int n, int& count_compare);
+void CountingSort(int* arr, int n, double& count_compare);

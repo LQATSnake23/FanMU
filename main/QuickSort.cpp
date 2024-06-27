@@ -1,6 +1,6 @@
 #include "QuickSort.h"
 
-int Partition(int* arr, int left, int right, int& count_compare)
+int Partition(int* arr, int left, int right, double& count_compare)
 {
     int p = right;
     right = right - 1;
@@ -25,7 +25,7 @@ int Partition(int* arr, int left, int right, int& count_compare)
     return left;
 }
 
-void QuickSort(int* arr, int left, int right, int& count_compare)
+void QuickSort(int* arr, int left, int right, double& count_compare)
 {
     if (left < right)
     {

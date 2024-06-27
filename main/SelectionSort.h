@@ -1,4 +1,4 @@
 #pragma once
 #include "DataGenerator.h"
-void SelectionSort(int* arr, int n, int& count_compare);
+void SelectionSort(int* arr, int n, double& count_compare);
 

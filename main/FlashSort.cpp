@@ -1,5 +1,5 @@
 #include "FlashSort.h"
-void FlashSort(int* arr, int n, int& count_compare)
+void FlashSort(int* arr, int n, double& count_compare)
 {
     int m = 0.45 * n;
     int max = arr[0];

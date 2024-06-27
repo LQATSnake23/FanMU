@@ -1,6 +1,6 @@
 #include "HeapSort.h"
 
-void MaxHeapify(int* arr, int n, int i, int& count_compare)
+void MaxHeapify(int* arr, int n, int i, double& count_compare)
 {
     int left = 2 * i + 1;
     int right = 2 * i + 2;
@@ -19,14 +19,14 @@ void MaxHeapify(int* arr, int n, int i, int& count_compare)
         MaxHeapify(arr, n, largest, count_compare);
     }
 }
-void BuildMaxHeap(int* arr, int n, int& count_compare)
+void BuildMaxHeap(int* arr, int n, double& count_compare)
 {
     for (int i = n / 2 - 1; ++count_compare && i >= 0; i--)
     {
         MaxHeapify(arr, n, i, count_compare);
     }
 }
-void HeapSort(int* arr, int n, int& count_compare)
+void HeapSort(int* arr, int n, double& count_compare)
 {
     BuildMaxHeap(arr, n, count_compare);
     for (int i = n - 1; ++count_compare && i >= 0; i--)

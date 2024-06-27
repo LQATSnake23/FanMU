@@ -1,5 +1,5 @@
 #include "SelectionSort.h"
-void SelectionSort(int* arr, int n, int& count_compare)
+void SelectionSort(int* arr, int n, double& count_compare)
 {
 
     for (int i = 0; ++count_compare && i < n - 1; i++)

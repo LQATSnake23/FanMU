@@ -1,6 +1,6 @@
 #include "RadixSort.h"
 
-void CountingSortForRadix(int* arr, int n, int div, int& count_compare)
+void CountingSortForRadix(int* arr, int n, int div, double& count_compare)
 {
     const int max = 10;
     int* count_arr = new int[max + 1];
@@ -33,7 +33,7 @@ void CountingSortForRadix(int* arr, int n, int div, int& count_compare)
     delete[]count_arr;
     delete[]result_arr;
 }
-void RadixSort(int* arr, int n, int& count_compare)
+void RadixSort(int* arr, int n, double& count_compare)
 {
     int max = arr[0];
     for (int i = 1; ++count_compare && i < n; i++)

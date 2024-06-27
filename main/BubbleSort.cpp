@@ -1,6 +1,6 @@
 #include "BubbleSort.h"
 
-void BubbleSort(int* arr, int n, int& count_compare)
+void BubbleSort(int* arr, int n, double& count_compare)
 {
     for (int i = 0; ++count_compare && i < n - 1; i++)
     {

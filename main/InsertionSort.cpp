@@ -1,6 +1,6 @@
 #include "InsertionSort.h"
 
-void InsertionSort(int* arr, int n, int& count_compare)
+void InsertionSort(int* arr, int n, double& count_compare)
 {
 
     for (int i = 1; ++count_compare && i < n; i++)

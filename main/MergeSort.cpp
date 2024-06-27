@@ -1,6 +1,6 @@
 #include "MergeSort.h"
 
-void Merge(int* arr, int left, int mid, int right, int& count_compare)
+void Merge(int* arr, int left, int mid, int right, double& count_compare)
 {
     int* new_arr = new int[right - left + 1];
     int i = 0;
@@ -41,7 +41,7 @@ void Merge(int* arr, int left, int mid, int right, int& count_compare)
     delete[]new_arr;
 }
 
-void MergeSort(int* arr, int left, int right, int& count_compare)
+void MergeSort(int* arr, int left, int right, double& count_compare)
 {
     if (++count_compare && left >= right) return;
     else
