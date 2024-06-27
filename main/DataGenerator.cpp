@@ -55,17 +55,17 @@ void GenerateData(int a[], int n, int dataType)
 {
 	switch (dataType)
 	{
-	case 0:	// ngẫu nhiên
+	case 0:	// Randomized
 		GenerateRandomData(a, n);
 		break;
-	case 1:	// có thứ tự
+	case 1:	// Nearly sorted
+		GenerateNearlySortedData(a, n);
+		break;
+	case 2:	// Sorted
 		GenerateSortedData(a, n);
 		break;
-	case 2:	// có thứ tự ngược
+	case 3:	// Reversed
 		GenerateReverseData(a, n);
-		break;
-	case 3:	// gần như có thứ tự
-		GenerateNearlySortedData(a, n);
 		break;
 	default:
 		printf("Error: unknown data type!\n");

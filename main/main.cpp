@@ -158,7 +158,7 @@ string nameAlgorithm(string cmd) {
 int main(int argc, char* argv[])
 {
 	Command cmdLine;
-	int* array = NULL, runtime = 0, runtime2 = 0, order;
+	int* array = NULL, runtime = 0, runtime2 = 0, order = 0;
 	double comps = 0, comps2 = 0;
 	
 	cmdLine.mode = argv[1];
@@ -254,15 +254,17 @@ int main(int argc, char* argv[])
 		if (cmdLine.parameter == "-comp" || cmdLine.parameter == "-both") {
 			cout << "Comparisons: " << fixed << setprecision(0) << comps << endl;
 		}
+		writeFile("output.txt", array, cmdLine.inputSize);
 		break;
 		
 	case 2:
 		if (cmdLine.order == "-rand") order = 0;
-		else if (cmdLine.order == "-sorted") order = 1;
-		else if (cmdLine.order == "-rev") order = 2;
-		else if (cmdLine.order == "-nsorted") order = 3;
+		else if (cmdLine.order == "-nsorted") order = 1;
+		else if (cmdLine.order == "-sorted") order = 2;
+		else if (cmdLine.order == "-rev") order = 3;
 		array = new int[cmdLine.inputSize];
 		GenerateData(array, cmdLine.inputSize, order);
+		writeFile("input.txt", array, cmdLine.inputSize);
 
 		sortData(cmdLine.algorithm, array, cmdLine.inputSize, runtime, comps);
 		cout << "---------------------------------------" << endl;
@@ -272,20 +274,22 @@ int main(int argc, char* argv[])
 		if (cmdLine.parameter == "-comp" || cmdLine.parameter == "-both") {
 			cout << "Comparisons: " << fixed << setprecision(0) << comps << endl;
 		}
+		writeFile("output.txt", array, cmdLine.inputSize);
 		break;
 
 	case 3:
-		order = 0;
 		array = new int[cmdLine.inputSize];
 		while (order < 4) {
 			GenerateData(array, cmdLine.inputSize, order);
+			string inputFile = "input_" + to_string(order + 1) + ".txt";
+			writeFile(inputFile, array, cmdLine.inputSize);
 			sortData(cmdLine.algorithm, array, cmdLine.inputSize, runtime, comps);
 
 			cout << "Input Order: ";
 			if (order == 0) cout << "Randomized" << endl;
-			if (order == 1) cout << "Sorted" << endl;
-			if (order == 2) cout << "Reversed" << endl;
-			if (order == 3) cout << "Nearly Sorted" << endl;
+			if (order == 1) cout << "Nearly Sorted" << endl;
+			if (order == 2) cout << "Sorted" << endl;
+			if (order == 3) cout << "Reversed" << endl;
 			cout << "---------------------------------------" << endl;
 			if (cmdLine.parameter == "-time" || cmdLine.parameter == "-both") {
 				cout << "Running time: " << runtime << "ms" << endl;
@@ -312,12 +316,13 @@ int main(int argc, char* argv[])
 
 	case 5:
 		if (cmdLine.order == "-rand") order = 0;
-		else if (cmdLine.order == "-sorted") order = 1;
-		else if (cmdLine.order == "-rev") order = 2;
-		else if (cmdLine.order == "-nsorted") order = 3;
+		else if (cmdLine.order == "-nsorted") order = 1;
+		else if (cmdLine.order == "-sorted") order = 2;
+		else if (cmdLine.order == "-rev") order = 3;
 		array = new int[cmdLine.inputSize];
 		int* copy = new int[cmdLine.inputSize];
 		GenerateData(array, cmdLine.inputSize, order);
+		writeFile("input.txt", array, cmdLine.inputSize);
 		for (int i = 0; i < cmdLine.inputSize; i++) {
 			copy[i] = array[i];
 		}
@@ -327,9 +332,9 @@ int main(int argc, char* argv[])
 
 		cout << "Input Order: ";
 		if (order == 0) cout << "Randomized" << endl;
-		if (order == 1) cout << "Sorted" << endl;
-		if (order == 2) cout << "Reversed" << endl;
-		if (order == 3) cout << "Nearly Sorted" << endl;
+		if (order == 1) cout << "Nearly Sorted" << endl;
+		if (order == 2) cout << "Sorted" << endl;
+		if (order == 3) cout << "Reversed" << endl;
 		cout << "---------------------------------------" << endl;
 		cout << "Running time: " << runtime << "ms" << " | " << runtime2 << "ms" << endl;
 		cout << "Comparisons: " << fixed << setprecision(0) << comps;
