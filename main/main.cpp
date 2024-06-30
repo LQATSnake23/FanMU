@@ -120,6 +120,12 @@ int main(int argc, char* argv[])
 		writeFile("input.txt", array, cmdLine.inputSize);
 
 		sortData(cmdLine.algorithm, array, cmdLine.inputSize, runtime, comps);
+
+		cout << "Input Order: ";
+		if (order == 0) cout << "Randomized" << endl;
+		if (order == 1) cout << "Nearly Sorted" << endl;
+		if (order == 2) cout << "Sorted" << endl;
+		if (order == 3) cout << "Reversed" << endl;
 		cout << "---------------------------------------" << endl;
 		if (cmdLine.parameter == "-time" || cmdLine.parameter == "-both") {
 			cout << "Running time: " << runtime << "ms" << endl;
