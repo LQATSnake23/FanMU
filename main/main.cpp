@@ -11,8 +11,8 @@ using namespace std;
 int main(int argc, char* argv[])
 {
 	Command cmdLine;
-	int* array = NULL, runtime = 0, runtime2 = 0, order = 0;
-	double comps = 0, comps2 = 0;
+	int* array = NULL, order = 0;
+	double runtime = 0, runtime2 = 0, comps = 0, comps2 = 0;
 	
 	cmdLine.mode = argv[1];
 	if (cmdLine.mode != "-a" && cmdLine.mode != "-c") {
@@ -102,7 +102,7 @@ int main(int argc, char* argv[])
 		sortData(cmdLine.algorithm, array, cmdLine.inputSize, runtime, comps);
 		cout << "---------------------------------------" << endl;
 		if (cmdLine.parameter == "-time" || cmdLine.parameter == "-both") {
-			cout << "Running time: " << runtime << "ms" << endl;
+			cout << "Running time: " << fixed << setprecision(4) << runtime / 1000 << "ms" << endl;
 		}
 		if (cmdLine.parameter == "-comp" || cmdLine.parameter == "-both") {
 			cout << "Comparisons: " << fixed << setprecision(0) << comps << endl;
@@ -128,7 +128,7 @@ int main(int argc, char* argv[])
 		if (order == 3) cout << "Reversed" << endl;
 		cout << "---------------------------------------" << endl;
 		if (cmdLine.parameter == "-time" || cmdLine.parameter == "-both") {
-			cout << "Running time: " << runtime << "ms" << endl;
+			cout << "Running time: " << fixed << setprecision(4) << runtime / 1000 << "ms" << endl;
 		}
 		if (cmdLine.parameter == "-comp" || cmdLine.parameter == "-both") {
 			cout << "Comparisons: " << fixed << setprecision(0) << comps << endl;
@@ -151,7 +151,7 @@ int main(int argc, char* argv[])
 			if (order == 3) cout << "Reversed" << endl;
 			cout << "---------------------------------------" << endl;
 			if (cmdLine.parameter == "-time" || cmdLine.parameter == "-both") {
-				cout << "Running time: " << runtime << "ms" << endl;
+				cout << "Running time: " << fixed << setprecision(4) << runtime / 1000 << "ms" << endl;
 			}
 			if (cmdLine.parameter == "-comp" || cmdLine.parameter == "-both") {
 				cout << "Comparisons: " << fixed << setprecision(0) << comps << endl;
@@ -167,7 +167,7 @@ int main(int argc, char* argv[])
 		sortData(cmdLine.algorithm2, array, cmdLine.inputSize, runtime2, comps2);
 
 		cout << "---------------------------------------" << endl;
-		cout << "Running time: " << runtime << "ms" << " | " << runtime2 << "ms" << endl;
+		cout << "Running time: " << fixed << setprecision(4) << runtime / 1000 << "ms" << " | " << runtime2 << "ms" << endl;
 		cout << "Comparisons: " << fixed << setprecision(0) << comps;
 		cout << " | " << fixed << setprecision(0) << comps2 << endl;
 
@@ -195,7 +195,7 @@ int main(int argc, char* argv[])
 		if (order == 2) cout << "Sorted" << endl;
 		if (order == 3) cout << "Reversed" << endl;
 		cout << "---------------------------------------" << endl;
-		cout << "Running time: " << runtime << "ms" << " | " << runtime2 << "ms" << endl;
+		cout << "Running time: " << fixed << setprecision(4) << runtime / 1000 << "ms" << " | " << runtime2 << "ms" << endl;
 		cout << "Comparisons: " << fixed << setprecision(0) << comps;
 		cout << " | " << fixed << setprecision(0) << comps2 << endl;
 		

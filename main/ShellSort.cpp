@@ -2,24 +2,16 @@
 
 void ShellSort(int* arr, int n, double& count_compare)
 {
-    int h = 1;
-    while (++count_compare && h <= n / 3)
+    for (int gap = n / 2; ++count_compare && gap > 0; gap /= 2)
     {
-        h = h * 3 + 1;
-    }
-    while (++count_compare && h > 0)
-    {
-        for (int i = h; ++count_compare && i < n; i++)
+        for (int i = gap; ++count_compare && i < n; i += 1)
         {
-            int key = arr[i];
-            int j = i;
-            while (++count_compare && arr[j - h] > key && ++count_compare && j > h - 1)
-            {
-                arr[j] = arr[j - h];
-                j -= h;
+            int temp = arr[i];
+            int j;
+            for (j = i; (++count_compare && j >= gap) && (++count_compare && arr[j - gap] > temp); j -= gap) {
+                arr[j] = arr[j - gap];
             }
-            arr[j] = key;
+            arr[j] = temp;
         }
-        h = (h - 1) / 3;
     }
 }

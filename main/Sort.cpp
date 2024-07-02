@@ -29,13 +29,13 @@ void writeFile(string filename, int* arr, int n) {
 	outfile.close();
 }
 
-void sortData(string algorithm, int* arr, int n, int& run_time, double& comp) {
+void sortData(string algorithm, int* arr, int n, double& run_time, double& comp) {
 	comp = 0;
 	if (algorithm == "selection-sort") {
 		auto start = high_resolution_clock::now();
 		SelectionSort(arr, n, comp);
 		auto stop = high_resolution_clock::now();
-		auto duration = duration_cast<milliseconds>(stop - start);
+		auto duration = duration_cast<microseconds>(stop - start);
 		run_time = duration.count();
 		return;
 	}
@@ -43,7 +43,7 @@ void sortData(string algorithm, int* arr, int n, int& run_time, double& comp) {
 		auto start = high_resolution_clock::now();
 		InsertionSort(arr, n, comp);
 		auto stop = high_resolution_clock::now();
-		auto duration = duration_cast<milliseconds>(stop - start);
+		auto duration = duration_cast<microseconds>(stop - start);
 		run_time = duration.count();
 		return;
 	}
@@ -51,15 +51,15 @@ void sortData(string algorithm, int* arr, int n, int& run_time, double& comp) {
 		auto start = high_resolution_clock::now();
 		BubbleSort(arr, n, comp);
 		auto stop = high_resolution_clock::now();
-		auto duration = duration_cast<milliseconds>(stop - start);
+		auto duration = duration_cast<microseconds>(stop - start);
 		run_time = duration.count();
 		return;
 	}
-	if (algorithm == "Shaker-sort") {
+	if (algorithm == "shaker-sort") {
 		auto start = high_resolution_clock::now();
 		ShakerSort(arr, n, comp);
 		auto stop = high_resolution_clock::now();
-		auto duration = duration_cast<milliseconds>(stop - start);
+		auto duration = duration_cast<microseconds>(stop - start);
 		run_time = duration.count();
 		return;
 	}
@@ -67,7 +67,7 @@ void sortData(string algorithm, int* arr, int n, int& run_time, double& comp) {
 		auto start = high_resolution_clock::now();
 		ShellSort(arr, n, comp);
 		auto stop = high_resolution_clock::now();
-		auto duration = duration_cast<milliseconds>(stop - start);
+		auto duration = duration_cast<microseconds>(stop - start);
 		run_time = duration.count();
 		return;
 	}
@@ -75,7 +75,7 @@ void sortData(string algorithm, int* arr, int n, int& run_time, double& comp) {
 		auto start = high_resolution_clock::now();
 		HeapSort(arr, n, comp);
 		auto stop = high_resolution_clock::now();
-		auto duration = duration_cast<milliseconds>(stop - start);
+		auto duration = duration_cast<microseconds>(stop - start);
 		run_time = duration.count();
 		return;
 	}
@@ -83,7 +83,7 @@ void sortData(string algorithm, int* arr, int n, int& run_time, double& comp) {
 		auto start = high_resolution_clock::now();
 		MergeSort(arr, 0, n - 1, comp);
 		auto stop = high_resolution_clock::now();
-		auto duration = duration_cast<milliseconds>(stop - start);
+		auto duration = duration_cast<microseconds>(stop - start);
 		run_time = duration.count();
 		return;
 	}
@@ -91,7 +91,7 @@ void sortData(string algorithm, int* arr, int n, int& run_time, double& comp) {
 		auto start = high_resolution_clock::now();
 		QuickSort(arr, 0, n - 1, comp);
 		auto stop = high_resolution_clock::now();
-		auto duration = duration_cast<milliseconds>(stop - start);
+		auto duration = duration_cast<microseconds>(stop - start);
 		run_time = duration.count();
 		return;
 	}
@@ -99,7 +99,7 @@ void sortData(string algorithm, int* arr, int n, int& run_time, double& comp) {
 		auto start = high_resolution_clock::now();
 		CountingSort(arr, n, comp);
 		auto stop = high_resolution_clock::now();
-		auto duration = duration_cast<milliseconds>(stop - start);
+		auto duration = duration_cast<microseconds>(stop - start);
 		run_time = duration.count();
 		return;
 	}
@@ -107,7 +107,7 @@ void sortData(string algorithm, int* arr, int n, int& run_time, double& comp) {
 		auto start = high_resolution_clock::now();
 		RadixSort(arr, n, comp);
 		auto stop = high_resolution_clock::now();
-		auto duration = duration_cast<milliseconds>(stop - start);
+		auto duration = duration_cast<microseconds>(stop - start);
 		run_time = duration.count();
 		return;
 	}
@@ -115,7 +115,7 @@ void sortData(string algorithm, int* arr, int n, int& run_time, double& comp) {
 		auto start = high_resolution_clock::now();
 		FlashSort(arr, n, comp);
 		auto stop = high_resolution_clock::now();
-		auto duration = duration_cast<milliseconds>(stop - start);
+		auto duration = duration_cast<microseconds>(stop - start);
 		run_time = duration.count();
 		return;
 	}

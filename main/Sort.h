@@ -31,5 +31,5 @@ struct Command {
 
 int* readFile(string filename, int& n);
 void writeFile(string filename, int* arr, int n);
-void sortData(string algorithm, int* arr, int n, int& run_time, double& comp);
+void sortData(string algorithm, int* arr, int n, double& run_time, double& comp);
 string nameAlgorithm(string cmd);
