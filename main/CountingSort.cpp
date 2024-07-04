@@ -1,5 +1,4 @@
 #include "CountingSort.h"
-#include "CountingSort.h"
 
 void CountingSort(int* arr, int n, double& count_compare)
 {

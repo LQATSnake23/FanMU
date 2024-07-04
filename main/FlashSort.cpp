@@ -1,4 +1,8 @@
-#include "FlashSort.h"
+﻿#include "FlashSort.h"
+
+// code referenced at line 16-60 from “flash_sort.h” made by Lê Duy Thức 
+// https://github.com/leduythuccs/Sorting-Algorithms/blob/master/sorting-methods/flash_sort.h
+
 void FlashSort(int a[], int n, double& count_compare) {
     if (n <= 1) return;
     int m = n * 0.45;

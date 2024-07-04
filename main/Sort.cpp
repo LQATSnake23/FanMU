@@ -31,6 +31,8 @@ void writeFile(string filename, int* arr, int n) {
 
 void sortData(string algorithm, int* arr, int n, double& run_time, double& comp) {
 	comp = 0;
+
+	// Selection Sort
 	if (algorithm == "selection-sort") {
 		auto start = high_resolution_clock::now();
 		SelectionSort(arr, n, comp);
@@ -39,6 +41,8 @@ void sortData(string algorithm, int* arr, int n, double& run_time, double& comp)
 		run_time = duration.count();
 		return;
 	}
+
+	// Insertion Sort
 	if (algorithm == "insertion-sort") {
 		auto start = high_resolution_clock::now();
 		InsertionSort(arr, n, comp);
@@ -47,6 +51,8 @@ void sortData(string algorithm, int* arr, int n, double& run_time, double& comp)
 		run_time = duration.count();
 		return;
 	}
+
+	// Bubble Sort
 	if (algorithm == "bubble-sort") {
 		auto start = high_resolution_clock::now();
 		BubbleSort(arr, n, comp);
@@ -55,6 +61,8 @@ void sortData(string algorithm, int* arr, int n, double& run_time, double& comp)
 		run_time = duration.count();
 		return;
 	}
+
+	// Shaker Sort
 	if (algorithm == "shaker-sort") {
 		auto start = high_resolution_clock::now();
 		ShakerSort(arr, n, comp);
@@ -63,6 +71,8 @@ void sortData(string algorithm, int* arr, int n, double& run_time, double& comp)
 		run_time = duration.count();
 		return;
 	}
+
+	// Shell Sort
 	if (algorithm == "shell-sort") {
 		auto start = high_resolution_clock::now();
 		ShellSort(arr, n, comp);
@@ -71,6 +81,8 @@ void sortData(string algorithm, int* arr, int n, double& run_time, double& comp)
 		run_time = duration.count();
 		return;
 	}
+
+	// Heap Sort
 	if (algorithm == "heap-sort") {
 		auto start = high_resolution_clock::now();
 		HeapSort(arr, n, comp);
@@ -79,6 +91,8 @@ void sortData(string algorithm, int* arr, int n, double& run_time, double& comp)
 		run_time = duration.count();
 		return;
 	}
+
+	// Merge Sort
 	if (algorithm == "merge-sort") {
 		auto start = high_resolution_clock::now();
 		MergeSort(arr, 0, n - 1, comp);
@@ -87,6 +101,8 @@ void sortData(string algorithm, int* arr, int n, double& run_time, double& comp)
 		run_time = duration.count();
 		return;
 	}
+
+	// Quick Sort
 	if (algorithm == "quick-sort") {
 		auto start = high_resolution_clock::now();
 		QuickSort(arr, 0, n - 1, comp);
@@ -95,6 +111,8 @@ void sortData(string algorithm, int* arr, int n, double& run_time, double& comp)
 		run_time = duration.count();
 		return;
 	}
+
+	// Counting Sort
 	if (algorithm == "counting-sort") {
 		auto start = high_resolution_clock::now();
 		CountingSort(arr, n, comp);
@@ -103,6 +121,8 @@ void sortData(string algorithm, int* arr, int n, double& run_time, double& comp)
 		run_time = duration.count();
 		return;
 	}
+
+	// Radix Sort
 	if (algorithm == "radix-sort") {
 		auto start = high_resolution_clock::now();
 		RadixSort(arr, n, comp);
@@ -111,6 +131,8 @@ void sortData(string algorithm, int* arr, int n, double& run_time, double& comp)
 		run_time = duration.count();
 		return;
 	}
+
+	// Flash Sort
 	if (algorithm == "flash-sort") {
 		auto start = high_resolution_clock::now();
 		FlashSort(arr, n, comp);

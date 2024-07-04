@@ -1,5 +1,7 @@
 #include "HeapSort.h"
 
+// code referenced at https://funix.edu.vn/chia-se-kien-thuc/gioi-thieu-ve-thuat-toan-heap-sort/
+
 void MaxHeapify(int* arr, int n, int i, double& count_compare)
 {
     int left = 2 * i + 1;

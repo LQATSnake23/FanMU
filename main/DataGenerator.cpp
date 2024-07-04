@@ -8,8 +8,6 @@ void HoanVi(T& a, T& b)
 	b = x;
 }
 
-//-------------------------------------------------
-
 void GenerateRandomData(int a[], int n)
 {
 	srand((unsigned int)time(NULL));

@@ -1,22 +1,22 @@
 ﻿#pragma once
 #include <iostream>
-#include <fstream>
-#include <cmath>
+#include <stdlib.h>
 #include <time.h>
 using namespace std;
 
 template <class T>
 void HoanVi(T& a, T& b);
-// Hàm phát sinh mảng dữ liệu ngẫu nhiên
+
+// Generate a randomized array
 void GenerateRandomData(int a[], int n);
 
-// Hàm phát sinh mảng dữ liệu có thứ tự tăng dần
+// Generate an array with ascending order
 void GenerateSortedData(int a[], int n);
 
-// Hàm phát sinh mảng dữ liệu có thứ tự ngược (giảm dần)
+// Generate an array with descending order
 void GenerateReverseData(int a[], int n);
 
-// Hàm phát sinh mảng dữ liệu gần như có thứ tự
+// Generate a nearly sorted array (in ascending order)
 void GenerateNearlySortedData(int a[], int n);
 
 void GenerateData(int a[], int n, int dataType);
